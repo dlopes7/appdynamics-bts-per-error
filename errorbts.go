@@ -51,8 +51,9 @@ func getErrorSnapshots(app int, timeInMinutes int) []*appdrest.Snapshot {
 	}
 
 	snapsFilters := &appdrest.SnapshotFilters{
-		ErrorOccurred: true,
-		NeedProps:     true,
+		ErrorOccurred:  true,
+		NeedProps:      true,
+		UserExperience: []string{"ERROR"},
 	}
 	for i, times := range timeRanges {
 		fmt.Printf("%v%%\tGetting snapshots from %v to %v...\n", 100*(1+i)/len(timeRanges), times[0], times[1])
