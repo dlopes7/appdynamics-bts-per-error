@@ -106,7 +106,7 @@ func getBTsPerError(app int, minutes int) {
 		panic(err.Error())
 	}
 	fmt.Println("Writing the results to JSON")
-	err = ioutil.WriteFile("resultado.json", jsonString, 0644)
+	err = ioutil.WriteFile("results.json", jsonString, 0644)
 	if err != nil {
 		panic(err.Error())
 	}
